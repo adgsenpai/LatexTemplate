@@ -12,6 +12,7 @@ jobs:
         run: |
           sudo pdflatex main.tex          
       - name: Publish Latest PDF to Repo
+        if: success() || failure()
         run: |
           git config --local user.email "${GITHUB_ACTOR}"
           git config --local user.name "${GITHUB_ACTOR}@users.noreply.github.com"
