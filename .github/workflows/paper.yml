@@ -14,8 +14,8 @@ jobs:
       - name: Publish Latest PDF to Repo
         if: success() || failure()
         run: |
-          git config --local user.email "${GITHUB_ACTOR}"
-          git config --local user.name "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "Compiled and updated paper ${{ github.sha }}"
           git push
